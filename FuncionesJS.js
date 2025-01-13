@@ -24,15 +24,21 @@ function cuantosclicks(){
         (
         clicks=0
     )
-    document.getElementById("textoClicks").innerText(clicks);
-    return clicks;
-}
+    document.getElementById("textoClicks").innerText(clicks)
+    }
 
 function hazClick(){
-    let clicks=cuantosclicks();
-
+    let clicks=(localStorage.getItem("clicks")||0);
+    clicks++;
+    localStorage.setItem("clicks",clicks);
+    cuantosclicks;
 }
 
 function cambiaColor(){
-    
+
+    function numAlAzar(){
+        return (Math.random()*255+1)
+    }
+
+    $("body").css("background-color","rgb ("+numAlAzar+","+numAlAzar+","+numAlAzar+")")
 }
