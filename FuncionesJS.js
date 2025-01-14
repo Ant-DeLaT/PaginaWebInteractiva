@@ -1,19 +1,19 @@
-if(localStorage.getItem("claro")){
-    let claro=true;
-    ponerClaro();
-}else{
-    ponerOscuro();
-}
+console.log(!false);
 function cambioClaro(){
-    claro=!claro;
-    localStorage.setItem("claro","true")
-    (claro)?ponerOscuro():ponerClaro();
+    let claro=localStorage.getItem("claro");
+    if(claro){ponerOscuro()}else{ponerClaro()};
+    localStorage.setItem("claro",!claro);
+    console.log("claro; "+localStorage.getItem("claro"))
 }
 function ponerOscuro(){
-    document.getElementsByClassName("body")
+    console.log("PONEROSCURO");
+    $("body").css("background-color","rgb(0,0,0)")
+    $("body").css("color","rgb(218, 217, 217)")
 }
-function ponerOscuro(){
-
+function ponerClaro(){
+    console.log("PONERClaro");
+    $("body").css("background-color","rgb(255, 255, 255)")
+    $("body").css("color","rgb(0,0,0)")
 }
 
 function cuantosclicks(){
@@ -40,20 +40,13 @@ function hazClick(){
 }
 
 function cambiaColor(){
-    const setBg = () => {
-        const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        document.body.style.backgroundColor = "#" + randomColor;
-        color.innerHTML = "#" + randomColor;
-      }
-      
-      genNew.addEventListener("click", setBg);
-      setBg();
-
-
     console.log("CambiaColor")
     function numAlAzar(){
-        return (Math.random()*255+1)
+        let valor=Math.floor(Math.random()*256);
+        return valor;
     }
-// rgb ("+numAlAzar+","+numAlAzar+","+numAlAzar+")
-    $("body").css("background-color","random")
+    let color="rgb("+numAlAzar()+","+numAlAzar()+","+numAlAzar()+")";
+    console.log("VALOR RGB: "+color);
+
+    $("body").css("background-color",color);
 }
