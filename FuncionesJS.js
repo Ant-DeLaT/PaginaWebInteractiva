@@ -1,3 +1,4 @@
+
 console.log(!false);
 function cambioClaro(){
     let claro=localStorage.getItem("claro");
@@ -8,7 +9,7 @@ function cambioClaro(){
 function ponerOscuro(){
     console.log("PONEROSCURO");
     $("body").css("background-color","rgb(0,0,0)")
-    $("body").css("color","rgb(218, 217, 217)")
+    $("body").css("color","rgb(255, 255, 255)")
 }
 function ponerClaro(){
     console.log("PONERClaro");
@@ -17,26 +18,26 @@ function ponerClaro(){
 }
 
 function cuantosclicks(){
-    console.log("Cuantos?")
-    let clicks;
-    (localStorage.getItem("clicks"))?
-        (
-        clicks=localStorage.getItem("clicks")):
-        (
-        clicks=0
-    )
-    document.getElementById("textoClicks").innerText(clicks)
+    console.log("Cuantos?");
+    clicks=localStorage.getItem("clicks");
+    
+    $("#textoClicks").innerText=(""+clicks)
     }
 
 function hazClick(){
     console.log("CLICK!")
     let clicks;
     (localStorage.getItem("clicks"))?
-    (clicks=localStorage.getItem("clicks")):
+    (clicks=parseInt(localStorage.getItem("clicks"))):
     (clicks=0);
-    clicks++;
+    console.log(clicks)
+    clicks=(parseInt(clicks)+1);
     localStorage.setItem("clicks",clicks);
-    cuantosclicks;
+    cuantosclicks();
+}
+function reinicioClicks(){
+    console.log("Reiniciado")
+    localStorage.setItem("clicks",0)
 }
 
 function cambiaColor(){
@@ -49,4 +50,5 @@ function cambiaColor(){
     console.log("VALOR RGB: "+color);
 
     $("body").css("background-color",color);
+    
 }
