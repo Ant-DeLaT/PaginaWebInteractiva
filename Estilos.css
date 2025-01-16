@@ -16,3 +16,8 @@ body{
     z-index: 100;
     transition: width 0.2 ease-in-out;
 }
+
+header{
+    position: absolute;
+    left: 40%;
+}

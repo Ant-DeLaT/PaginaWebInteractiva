@@ -70,14 +70,15 @@ window.addEventListener('scroll',progresoBarra)
 // JAVASCRIPT LISTO
 $(document).ready(()=>{
     function textoSaludo(){
-        let hora=Math.floor((Date.now()/(3600*1000)/24+1)%24)
+        let hora=Math.floor((Date.now()/(3600*1000)+1)%24)
         if (hora<12) {
             buenosDias()
-        } else if(hora<20) {
+        } else if(hora<20){
             buenasTardes()
-        }else{
+        } else{
             buenasNoches()
         }
+        console.log(hora);
     }
     function buenosDias(){
         $("#paraCambiar").text("Buenos días");
@@ -90,13 +91,14 @@ $(document).ready(()=>{
     }
 
 
-    const detectado =new SpeechRecognition();
-    const listaReconocida = new SpeechGrammarList();
+    // const detectado =new SpeechRecognition();
+    // const listaReconocida = new SpeechGrammarList();
 
-    function parlanchin(){
+    // function parlanchin(){
         
-    }
-
+    // }
+    $("#lector").click()
+    $("#PARENLOOO").click()
 
     textoSaludo()
 }
