@@ -21,17 +21,46 @@
 
     <body>
         <header>
-            <!-- place navbar here -->
+            <h1 id="paraCambiar">a</h1>
         </header>
         <main>
-            <button onclick="cambioClaro()">CLARO/oscuro</button>
-            <button onclick="cambiaColor()">CambiarFondo</button>
-            <button onclick="hazClick()">HazClick</button>
-            <button onclick="reinicioClicks()">NoMásClicks</button>
-            <div id="textoClicks">contadorClicks</div>
+            <table>
+                <button onclick="cambioBrillo()">CLARO/oscuro</button>
+                <button>Leer el Texto</button>
+                
+            </table>
+            <br>
+            <div id="fondoVoluble">
+                <h3>Pulse este botón para cambiar el color del fondo</h3>
+                <button onclick="cambiaColor()">CambiarFondo</button>
+            </div>
+            <br>
+            <div>
+                <h3>Haga click para aumentar el número de clicks hechos, para reiniciar dicho número, presione el botón "Reiniciar"</h3>
+                <button onclick="hazClick()">HazClick</button>
+                <button onclick="reinicioClicks()">Reiniciar</button>
+                <div id="textoClicks" >contadorClicks</div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p style="width: 1%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consequuntur molestiae sed officiis, sunt magni voluptatibus voluptatem aliquam reprehenderit dolore incidunt nihil, laudantium rerum delectus ipsa libero animi minima iusto?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p style="width: 1%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consequuntur molestiae sed officiis, sunt magni voluptatibus voluptatem aliquam reprehenderit dolore incidunt nihil, laudantium rerum delectus ipsa libero animi minima iusto?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="barraProgreso" >
+                <!-- class="postbar_progress" aria-hidden="true" style="--scroll:50%" -->
+            </div>
         </main>
         <footer>
-            <!-- place footer here -->
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
         <script

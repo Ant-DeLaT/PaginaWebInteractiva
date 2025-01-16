@@ -1,3 +1,18 @@
 body{
     color: aliceblue;
 }
+/* #cuantoAvanza {
+    width: 100%;
+    background-color: grey;
+} */
+  
+#barraProgreso {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 1%;
+    height: 30px;
+    background-color: exponential-gradient(to right,green,red);
+    z-index: 100;
+    transition: width 0.2 ease-in-out;
+}
