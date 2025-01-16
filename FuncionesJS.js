@@ -28,7 +28,7 @@ function cambiaColor(){
 }
 function cambioBrillo(){
     let claro=cambioClaro();
-    if(claro==true){ponerOscuro();claro=false}else{ponerClaro();claro=true}
+    if(claro=="true"){ponerOscuro();claro=false}else{ponerClaro();claro=true}
     console.log("ANtclaro; "+localStorage.getItem("claro"))
     localStorage.setItem("claro",claro);
     console.log("dESpclaro; "+localStorage.getItem("claro"))
@@ -97,8 +97,32 @@ $(document).ready(()=>{
     // function parlanchin(){
         
     // }
-    $("#lector").click()
-    $("#PARENLOOO").click()
+    let haComenzado=null;
+    let cuentameUnCuento;
+    $("#lector").click(
+        (haComenzado==null)?
+            null:(
+            // cancel()
+            null
+        ),
+        haComenzado=true,
+        cuentameUnCuento= fetch("./CucuiGanon.txt")
+        .then(linea => linea.text("CucuiGanon.txt"))
+        .catch(err=>console.error("ERROR: ",err.message)),
+        cuentameUnCuento.speak()
+    )
+    $("#PARENLOOO").click(
+      ()=>{ 
+            if (haComenzado!=null) {
+                if (haComenzado==true) {
+                    cuentameUnCuento.pause()
+                    haComenzado=false;
+                } else {
+                    cuentameUnCuento.resume()
+                }
+            }
+        }
+    )
 
     textoSaludo()
 }
