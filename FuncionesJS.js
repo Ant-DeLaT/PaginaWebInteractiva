@@ -98,7 +98,9 @@ $(document).ready(()=>{
         
     // }
     let haComenzado=null;
-    let cuentameUnCuento;
+    const cuentameUnCuento=cuentameUnCuento=fetch("./CucuiGanon.txt")
+    .then(linea => linea.text("CucuiGanon.txt"))
+    .catch(err=>console.error("ERROR: ",err.message));
     $("#lector").click(
         (haComenzado==null)?
             null:(
@@ -106,9 +108,7 @@ $(document).ready(()=>{
             null
         ),
         haComenzado=true,
-        cuentameUnCuento= fetch("./CucuiGanon.txt")
-        .then(linea => linea.text("CucuiGanon.txt"))
-        .catch(err=>console.error("ERROR: ",err.message)),
+        
         cuentameUnCuento.speak()
     )
     $("#PARENLOOO").click(
