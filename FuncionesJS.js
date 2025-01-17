@@ -40,17 +40,21 @@ function cambioClaro(){
 }
 function ponerOscuro(){
     console.log("PONEROSCURO");
-    $("body").css("background-color","rgb(0,0,0)")
+    $("body").css("background-color","rgb(39, 39, 39)")
     $("body").css("color","rgb(255, 255, 255)")
+
     $(".btn").css("color","rgb(0, 0, 0)")
     $(".btn").css("background-color","rgb(255, 139, 139)")
 }
 function ponerClaro(){
     console.log("PONERClaro");
-    $("body").css("background-color","rgb(255, 255, 255)")
+    $("body").css("background-color","rgb(227, 233, 228)")
     $("body").css("color","rgb(0,0,0)")
+
     $(".btn").css("color","rgb(255, 255, 255)")
-    $(".btn").css("background-color","rgb(0, 0, 255)")
+    $(".btn").css("background-color","rgb(66, 81, 122)")
+
+    $("header").css("background-color","rgb(214, 192, 179)")
 }
 
 function cuantosclicks(){
