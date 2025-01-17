@@ -42,11 +42,15 @@ function ponerOscuro(){
     console.log("PONEROSCURO");
     $("body").css("background-color","rgb(0,0,0)")
     $("body").css("color","rgb(255, 255, 255)")
+    $(".btn").css("color","rgb(0, 0, 0)")
+    $(".btn").css("background-color","rgb(255, 139, 139)")
 }
 function ponerClaro(){
     console.log("PONERClaro");
     $("body").css("background-color","rgb(255, 255, 255)")
     $("body").css("color","rgb(0,0,0)")
+    $(".btn").css("color","rgb(255, 255, 255)")
+    $(".btn").css("background-color","rgb(0, 0, 255)")
 }
 
 function cuantosclicks(){
@@ -67,6 +71,14 @@ const progresoBarra=function(){
     barraProgreso.style.width=val+"%";
 }
 window.addEventListener('scroll',progresoBarra)
+
+
+
+// let haComenzado=null;
+// const cuentameUnCuento=cuentameUnCuento.fetch("./CucuiGanon.txt")
+// .then(linea => linea.text("CucuiGanon.txt"))
+// .catch(err=>console.error("ERROR: ",err.message));
+
 // JAVASCRIPT LISTO
 $(document).ready(()=>{
     function textoSaludo(){
@@ -97,34 +109,35 @@ $(document).ready(()=>{
     // function parlanchin(){
         
     // }
-    let haComenzado=null;
-    const cuentameUnCuento=cuentameUnCuento=fetch("./CucuiGanon.txt")
-    .then(linea => linea.text("CucuiGanon.txt"))
-    .catch(err=>console.error("ERROR: ",err.message));
-    $("#lector").click(
-        (haComenzado==null)?
-            null:(
-            // cancel()
-            null
-        ),
-        haComenzado=true,
+    
+
+    // $("#lector").click(
+    //     (haComenzado==null)?
+    //         null:(
+    //         // cancel()
+    //         null
+    //     ),
+    //     haComenzado=true,
         
-        cuentameUnCuento.speak()
-    )
-    $("#PARENLOOO").click(
-      ()=>{ 
-            if (haComenzado!=null) {
-                if (haComenzado==true) {
-                    cuentameUnCuento.pause()
-                    haComenzado=false;
-                } else {
-                    cuentameUnCuento.resume()
-                }
-            }
-        }
-    )
+    //     cuentameUnCuento.speak()
+    // )
+    // $("#PARENLOOO").click(
+    //   ()=>{ 
+    //         if (haComenzado!=null) {
+    //             if (haComenzado==true) {
+    //                 cuentameUnCuento.pause()
+    //                 haComenzado=false;
+    //             } else {
+    //                 cuentameUnCuento.resume()
+    //             }
+    //         }
+    //     }
+    // )
 
     textoSaludo()
+    claro=localStorage.getItem("claro");
+    (claro=="true")?(ponerClaro()):(ponerOscuro())
+    cuantosclicks()
 }
 
 )

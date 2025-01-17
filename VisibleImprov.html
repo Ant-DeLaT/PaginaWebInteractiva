@@ -16,43 +16,395 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="Estilos.css">
         <script src="jquery-3.7.1.min.js"></script>
     </head>
 
     <body>
-        <header>
-            <h1 id="paraCambiar">ja!, no me ves... ¿por qué me puedes ver?</h1>
-        </header>
-        <main>
-            <table>
-                <button onclick="cambioBrillo()">CLARO/oscuro</button>
-                <button id="lector">Leer el Texto</button>
-                <button id="PARENLOOO">Pausar/Reanudar la lectura</button>
-                
-            </table>
-            <br>
-            <div id="fondoVoluble">
-                <h3>Pulse este botón para cambiar el color del fondo</h3>
-                <button onclick="cambiaColor()">CambiarFondo</button>
-            </div>
-            <br>
-            <div>
-                <h3>Haga click para aumentar el número de clicks hechos, para reiniciar dicho número, presione el botón "Reiniciar"</h3>
-                <button onclick="hazClick()">HazClick</button>
-                <button onclick="reinicioClicks()">Reiniciar</button>
-                <div id="textoClicks" >contadorClicks</div>
-            </div>
+        <header class="rounded">
+            <h1 id="paraCambiar">¡ja!, no me ves... ¿por qué me puedes ver?</h1>
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <p style="width: 1%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consequuntur molestiae sed officiis, sunt magni voluptatibus voluptatem aliquam reprehenderit dolore incidunt nihil, laudantium rerum delectus ipsa libero animi minima iusto?</p>
+                    <div class="btn-group">
+                        <div class="col">
+                            <button class="btn " id="Inicio">Inicio</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn" id="Contenido">Contenidos</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn" id="Footer">Footer</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn2" onclick="cambioBrillo()">CLARO/oscuro</button>
+                        </div>
                     </div>
+                </div><br>
+                <div class="row ultimo">
+                    <div class="btn-group">
+                    <div class="col">
+                        <button class="btn btn2" id="cambioTam">Cambiar tamaño de letras</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn " id="lector">Leer el Texto</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn2" id="PARENLOOO">Pausar/Reanudar la lectura</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="fondoVoluble" class="border border-black rounded">
+                <h3>Pulse este botón para cambiar el color del fondo</h3>
+                <button class="btn cambiarFondo" onclick="cambiaColor()">CambiarFondo</button>
+            </div>
+            <br>
+            <div class="border border-black rounded">
+                <h3>Haga click para aumentar el número de clicks hechos, para reiniciar dicho número, presione el botón "Reiniciar"</h3>
+                <div>
+                    <div id="textoClicks">contadorClicks</div>
+                    <button class="btn hazclick" onclick="hazClick()">HazClick</button>
+                    <button class="btn reinicioclick" onclick="reinicioClicks()">Reiniciar</button>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <p style="width: 1%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consequuntur molestiae sed officiis, sunt magni voluptatibus voluptatem aliquam reprehenderit dolore incidunt nihil, laudantium rerum delectus ipsa libero animi minima iusto?</p>
+                        <p style="width: 1%;">Hola!
+
+                            Me has atrapado
+                            
+                            En medio-suavemente
+                            
+                            Te traigo mi suave
+                            
+                            Regresé de entre los muertos
+                            
+                            con música de You Tube
+                            
+                            que cumple con los derechos de autor
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            Te traigo mi suave
+                            
+                            Regresé de entre los muertos
+                            
+                            con música de You Tube
+                            
+                            que cumple con los derechos de autor
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            Te traigo mi suave
+                            
+                            Regresé de entre los muertos
+                            
+                            con música de You Tube
+                            
+                            que cumple con los derechos de autor
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            Te traigo mi suave
+                            
+                            Regresé de entre los muertos
+                            
+                            con música de You Tube (JAJAJAJAJAJAJAJAJAJAJAJAJA)
+                            
+                            que cumple con los derechos de autor
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            Te traigo mi suave
+                            
+                            Regresé de entre los muertos
+                            
+                            con música de You Tube
+                            
+                            que cumple con los derechos de autor
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            (JAJAJAJAJAJAJAJAJAJAJAJAJAJAJAJAJAJAJAJAJA)
+                            
+                            Te traigo mi suave
+                            
+                            Regresé de entre los muertos
+                            
+                            con música de You Tube
+                            
+                            que cumple con los derechos de autor
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            suavemente de nuevo
+                            
+                            un millon de veces suavemente
+                            
+                            multiplicado por otro millón
+                            
+                            Te traigo mi suave
+                            
+                            Regresé de entre los muertos
+                            
+                            con música de You Tube
+                            
+                            que cumple con los derechos de autor
+                            
+                            disfruta de la gloriosa suavidad
+                            
+                            conmigo bajo mi gobierno
+                            
+                            viviremos a mil
+                            
+                            suavemente
+                            
+                            mi corazón
+                            
+                            Es tiempo de suavemente
+                            
+                            te darás cuenta de que suavemente
+                            
+                            es para siempre
+                            
+                            la luna y el sol morirán
+                            
+                            pero la suavidad es suave
+                            
+                            las estrellas brillarán intensamente
+                            
+                            todos sabrán suavemente lo que suave es
+                            
+                            (SUAVE)</p>
                     </div>
                 </div>
             </div>
