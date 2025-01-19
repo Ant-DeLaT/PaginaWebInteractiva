@@ -8,34 +8,45 @@ body{
 
   header{
     padding: auto;
-    position: fixed;
+    
     text-align: center;
     /* background-color: rgba(94, 94, 94, 0.75); */
     top: 1%;
     left: 18%;
     margin-bottom: 1%;
+    padding: 2%;
+
   }
   main{
+    
     padding: 50px;
-    padding-top: 25%;
+    padding-top: 16%;
     
   }
   footer{
+    position: relative;
     padding: auto;
     background-color: lightgreen;
     text-align: center;
+    top: 90%;
     margin-left: 20%;
     margin-right: 20%;
   }
+  #contieneBarra{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+  }
 #barraProgreso {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 1%;
-    height: 30px;
-    background-color: exponential-gradient(to right,green,red);
-    z-index: 100;
-    transition: width 0.2 ease-in-out;
+    top: 0;
+    left: 0;
+    height: 10px;
+    background: rgb(2,0,36);
+background: linear-gradient(30deg, rgba(2,0,36,1) 0%, rgba(27,82,25,1) 35%, rgba(33,223,26,1) 76%);
+    
 }
 
 
@@ -56,4 +67,19 @@ body{
 }
 .hazclick{
     margin-left:40%
+}
+
+.flechaArriba{
+    position: fixed;
+    right: 10%;
+    margin-top: 18%;
+    color: aliceblue;
+    background-color: aqua;
+    font-size: xx-large;
+    padding: 2%;
+    border-radius: 10%;
+   
+}
+.flechaArriba:hover{
+    pointer-events: fill;
 }

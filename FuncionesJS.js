@@ -40,22 +40,33 @@ function cambioClaro(){
 }
 function ponerOscuro(){
     console.log("PONEROSCURO");
-    $("body").css("background-color","rgb(39, 39, 39)")
+    $("body").css("background-color","rgb(9, 18, 44)")
     $("body").css("color","rgb(255, 255, 255)")
 
-    $(".btn").css("color","rgb(0, 0, 0)")
-    $(".btn").css("background-color","rgb(255, 139, 139)")
+    $(".btn").css("color","rgb(255, 255, 255)")
+    $(".btn").css("background-color","rgb(135, 35, 65)")
+
+    $("header").css("background-color","rgb(225, 117, 100)")
+
+    $("#flechaArriba").css("background-color","rgb(190, 49, 68)")
 }
+// rgb(9, 18, 44) rgb(135, 35, 65) rgb(190, 49, 68) rgb(225, 117, 100)
 function ponerClaro(){
     console.log("PONERClaro");
-    $("body").css("background-color","rgb(227, 233, 228)")
+    $("body").css("background-color","rgb(251, 245, 221)")
     $("body").css("color","rgb(0,0,0)")
 
     $(".btn").css("color","rgb(255, 255, 255)")
-    $(".btn").css("background-color","rgb(66, 81, 122)")
+    $(".btn").css("background-color","rgb(221, 168, 83)")
 
-    $("header").css("background-color","rgb(214, 192, 179)")
+    $("#flechaArriba").css("background-color","rgb(190, 49, 68)")
+
+    $("header").css("background-color","rgb(166, 205, 198)")
 }
+
+//  rgb(251, 245, 221)   rgb(166, 205, 198)   rgb(22, 64, 77)   rgb(221, 168, 83)
+
+
 
 function cuantosclicks(){
     console.log("Cuantos?");
@@ -64,27 +75,89 @@ function cuantosclicks(){
     }
 
 
-const barraProgreso=$("#barraProgreso");
-const seccion= $("seccion");
-const progresoBarra=function(){
-    let cantidadBajada=-seccion.getBoundingClientRect().top;
-    let porcentajeProgreso=(cantidadBajada/(Selection.getBoundingClientRect().height-document.documentElement.clientHeight))*100;
-    let val=Math.floor(porcentajeProgreso);
+    
 
-    (val<0)?(val=0):null;
-    barraProgreso.style.width=val+"%";
+
+
+window.addEventListener("scroll",function(){
+    let cuantoBaja=document.documentElement.scrollTop;
+    let altoActual=document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let bajado=(cuantoBaja / altoActual) * 100;
+    document.querySelector("#barraProgreso").style.width = bajado + "%"; 
+    }
+)
+
+
+
+
+// Lector texto
+let texto=new FileReader("./CucuiGanon.txt")
+// .then(respuesta => respuesta.texto())
+// .then(datos=>{
+//     document.getElementById('fileContent').textContent=datos;
+// })
+// .catch(error => console.error('Error al leer'))
+
+
+
+// const hablar = new SpeechSynthesisUtterance(texto);
+// hablar.lang="es";
+// window.speechSynthesis.speak(texto);
+// console.log(hablar)
+function hablar(texto){
+    console.log("HABLAMEEEEE")
+    const mensage=new SpeechSynthesisUtterance();
+    
+    mensage.text=texto;
+    mensage.volume=1;
 }
-window.addEventListener('scroll',progresoBarra)
+
+//     $("#lector").click(
+//         (haComenzado==null)?
+//             null:(
+//             hablar.cancel()
+//         ),
+//         haComenzado=true,
+//         hablar.speak()
+//     )
+//     $("#PARENLOOO").click(
+//       ()=>{ 
+//             if (haComenzado!=null) {
+//                 if (haComenzado==true) {
+//                     cuentameUnCuento.pause()
+//                     haComenzado=false;
+//                 } else {
+//                     cuentameUnCuento.resume()
+//                 }
+//             }
+//         }
+//     )
 
 
 
-// let haComenzado=null;
-// const cuentameUnCuento=cuentameUnCuento.fetch("./CucuiGanon.txt")
-// .then(linea => linea.text("CucuiGanon.txt"))
-// .catch(err=>console.error("ERROR: ",err.message));
+function cambioTamanyo(){
+    console.log("CLICK2")
+    let tamanyo
+    if (localStorage.getItem("tamanyo")==null && tamanyo==undefined) {
+       tamanyo="grande";
+    }else{
+        tamanyo=localStorage.getItem("tamanyo")
+        console.log("ELSE"," ",)
+    }
 
+    if (tamanyo=="pequenyo"){
+        $("body").css("font-size","x-large")
+        localStorage.setItem("tamanyo","grande")
+        console.log("grande ",localStorage.getItem("tamanyo"))
+    }else{
+        $("body").css("font-size","x-small")
+        localStorage.setItem("tamanyo","pequenyo")
+        console.log("pequenyo ",localStorage.getItem("tamanyo"))
+    }
+}
 // JAVASCRIPT LISTO
 $(document).ready(()=>{
+
     function textoSaludo(){
         let hora=Math.floor((Date.now()/(3600*1000)+1)%24)
         if (hora<12) {
@@ -94,7 +167,7 @@ $(document).ready(()=>{
         } else{
             buenasNoches()
         }
-        console.log(hora);
+        console.log("Hora actual ",hora);
     }
     function buenosDias(){
         $("#paraCambiar").text("Buenos días");
@@ -106,41 +179,22 @@ $(document).ready(()=>{
         $("#paraCambiar").text("Que descanseis milord/milady");
     }
 
+      
 
-    // const detectado =new SpeechRecognition();
-    // const listaReconocida = new SpeechGrammarList();
 
-    // function parlanchin(){
-        
-    // }
-    
 
-    // $("#lector").click(
-    //     (haComenzado==null)?
-    //         null:(
-    //         // cancel()
-    //         null
-    //     ),
-    //     haComenzado=true,
-        
-    //     cuentameUnCuento.speak()
-    // )
-    // $("#PARENLOOO").click(
-    //   ()=>{ 
-    //         if (haComenzado!=null) {
-    //             if (haComenzado==true) {
-    //                 cuentameUnCuento.pause()
-    //                 haComenzado=false;
-    //             } else {
-    //                 cuentameUnCuento.resume()
-    //             }
-    //         }
-    //     }
-    // )
-
+    window.addEventListener("scroll",()=>{
+        if((document.documentElement.scrollHeight - document.documentElement.clientHeight)>20){
+            $("flechaArriba").css("display","none")
+        }else{
+            $("flechaArriba").css("display","block")
+        }
+    });
     textoSaludo()
+
     claro=localStorage.getItem("claro");
     (claro=="true")?(ponerClaro()):(ponerOscuro())
+
     cuantosclicks()
 }
 
